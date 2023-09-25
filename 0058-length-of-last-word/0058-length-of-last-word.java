@@ -1,22 +1,20 @@
 class Solution {
     public int lengthOfLastWord(String s) {
-   // Trim leading and trailing spaces
-        s = s.trim();
-
-        // Split the trimmed string into words using space as the delimiter
-        String[] words = s.split(" ");
-
-        // If there are no words, return 0
-        if (words.length == 0) {
-            return 0;
+    String str = s.trim();
+        int count = 0 ;
+        // for loop from last index to first
+        for(int i = str.length()-1 ;i>=0;i--){
+            // keep increasing the counter untill we find any blank space
+            if(str.charAt(i) != ' ' ){
+                count++ ;
+            }
+            // once the blank space is found break the loop
+            else {
+                break ;
+            }
         }
-
-        // Return the length of the last word
-        return words[words.length - 1].length();
-
-
-
-
+        return count ; 
+        
 
 
         
